@@ -18,6 +18,8 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({
   const brands = [
     'Tümü',
     'Togg',
+    'Tofaş',
+    'Chery',
     'Fiat',
     'Renault',
     'Toyota',
@@ -160,6 +162,8 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({
               className="w-full bg-[#161922] border border-[#232736] rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors cursor-pointer"
             >
               <option value="0" className="bg-[#161922]">Fark Etmez (Limitsiz)</option>
+              <option value="500000" className="bg-[#161922]">500.000 ₺'ye kadar</option>
+              <option value="1000000" className="bg-[#161922]">1.000.000 ₺'ye kadar</option>
               <option value="1500000" className="bg-[#161922]">1.500.000 ₺'ye kadar</option>
               <option value="2000000" className="bg-[#161922]">2.000.000 ₺'ye kadar</option>
               <option value="2500000" className="bg-[#161922]">2.500.000 ₺'ye kadar</option>
