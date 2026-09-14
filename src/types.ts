@@ -21,6 +21,7 @@ export interface Car {
   gallery?: string[];
   description: string;
   features: string[];
+  plate?: string;
   isFeatured?: boolean;
   isElectric?: boolean;
   electricSpecs?: {

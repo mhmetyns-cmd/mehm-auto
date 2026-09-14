@@ -1,6 +1,7 @@
 import React from 'react';
 import { GitCompare } from 'lucide-react';
 import type { Car } from '../types';
+import { LicensePlate } from './LicensePlate';
 
 interface CompareSectionProps {
   cars: Car[];
@@ -71,8 +72,11 @@ export const CompareSection: React.FC<CompareSectionProps> = ({
               ))}
             </select>
 
-            <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3 bg-black">
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-3 bg-black">
               <img src={carA.image} alt={carA.name} className="w-full h-full object-cover" />
+              <div className="absolute bottom-2 left-2 z-10">
+                <LicensePlate plate={carA.plate || '34 MMT 34'} size="sm" />
+              </div>
             </div>
             <div className="text-center">
               <h3 className="text-lg font-black text-white">{carA.name}</h3>
@@ -104,8 +108,11 @@ export const CompareSection: React.FC<CompareSectionProps> = ({
               ))}
             </select>
 
-            <div className="aspect-[16/9] rounded-xl overflow-hidden mb-3 bg-black">
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-3 bg-black">
               <img src={carB.image} alt={carB.name} className="w-full h-full object-cover" />
+              <div className="absolute bottom-2 left-2 z-10">
+                <LicensePlate plate={carB.plate || '34 MMT 34'} size="sm" />
+              </div>
             </div>
             <div className="text-center">
               <h3 className="text-lg font-black text-white">{carB.name}</h3>

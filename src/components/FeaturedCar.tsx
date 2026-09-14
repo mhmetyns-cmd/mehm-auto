@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, ChevronRight, Eye } from 'lucide-react';
 import type { Car } from '../types';
+import { LicensePlate } from './LicensePlate';
 
 interface FeaturedCarProps {
   car: Car;
@@ -33,13 +34,17 @@ export const FeaturedCar: React.FC<FeaturedCarProps> = ({ car, onSelectCar }) =>
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-[#11131a]" />
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 flex items-center gap-2">
               <span className="px-3.5 py-1.5 rounded-xl bg-red-600 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-red-600/50">
                 Pist Canavarı
               </span>
+              <LicensePlate plate={car.plate || '34 MMT 34'} size="sm" />
             </div>
             <div className="absolute bottom-6 left-6 right-6 lg:hidden bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10">
-              <h3 className="text-2xl font-black text-white">{car.name}</h3>
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <h3 className="text-xl font-black text-white truncate">{car.name}</h3>
+                <LicensePlate plate={car.plate || '34 MMT 34'} size="sm" />
+              </div>
               <p className="text-sm text-red-400 font-bold">{car.priceFormatted}</p>
             </div>
           </div>
@@ -49,7 +54,10 @@ export const FeaturedCar: React.FC<FeaturedCarProps> = ({ car, onSelectCar }) =>
             <div>
               <div className="hidden lg:block mb-6">
                 <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">{car.brand}</span>
-                <h3 className="text-3xl xl:text-4xl font-black text-white mb-2">{car.name}</h3>
+                <div className="flex items-center gap-3 mb-2 flex-wrap">
+                  <h3 className="text-3xl xl:text-4xl font-black text-white">{car.name}</h3>
+                  <LicensePlate plate={car.plate || '34 MMT 34'} size="md" />
+                </div>
                 <p className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                   {car.priceFormatted}
                 </p>
