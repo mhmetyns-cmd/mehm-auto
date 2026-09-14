@@ -7,14 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview",
-    "deploy": "vercel --prod"
+    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^1.45.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "sharp": "^0.35.4"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",

@@ -22,14 +22,11 @@ export const FavoritesModal: React.FC<FavoritesModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div 
-        className="relative w-full max-w-2xl bg-[#11131a] border border-[#232736] rounded-3xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div className="relative w-full max-w-2xl bg-[#11131a] border border-[#232736] rounded-3xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[#232736]">
-          <div className="flex items-center gap-3">
+        <div className="p-6 border-b border-[#232736] flex items-center justify-between">
+          <div className="flex items-center gap-2">
             <Heart className="w-5 h-5 text-red-500 fill-red-500" />
             <h3 className="text-xl font-black text-white">Favori Araçlarım ({favorites.length})</h3>
           </div>
