@@ -12,14 +12,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
       {/* Background Image with Cinematic Dark Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=2000&q=85"
-          alt="MEHMET AUTO Hero Süperspor Otomobil"
+          src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=2000&q=85"
+          alt="MEHMET AUTO Türkiye Otomobil Keşif Platformu"
           className="w-full h-full object-cover object-center scale-105 transform motion-safe:animate-pulse transition-transform duration-1000 ease-out"
           style={{ animationDuration: '8s' }}
         />
         {/* Layered Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#090a0f] via-[#090a0f]/80 to-[#090a0f]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#090a0f] via-[#090a0f]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#090a0f] via-[#090a0f]/80 to-transparent" />
         {/* Subtle accent ambient glow */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
           {/* Top Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md">
             <Sparkles className="w-4 h-4 text-red-400" />
-            <span>2026 Otomobil Dünyasının Zirvesi</span>
+            <span>Türkiye Yollarının En Popüler Modelleri</span>
           </div>
 
           {/* Main Titles */}
@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
           </div>
 
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
-            Yeni nesil otomobilleri keşfet, teknik özelliklerini derinlemesine incele, modelleri birbiriyle kıyasla ve sana en uygun sürüş karakterini bul.
+            TOGG T10X'ten Egea'ya, Corolla'dan Golf ve Tesla'ya kadar Türkiye'de en çok tercih edilen modelleri keşfet, fabrika teknik verilerini incele ve araçları yan yana kıyasla.
           </p>
 
           {/* CTA Buttons */}
@@ -64,23 +64,23 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
             </button>
           </div>
 
-          {/* Live Quick Metrics */}
+          {/* Live Quick Metrics for Turkey Market */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10">
             <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">1020<span className="text-xs text-red-500 ml-1">HP</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Maksimum Güç</p>
+              <p className="text-2xl sm:text-3xl font-black text-white">523<span className="text-xs text-cyan-400 ml-1">km</span></p>
+              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">TOGG T10X Menzil</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">2.1<span className="text-xs text-red-500 ml-1">sn</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">0-100 Rekor Hız</p>
+              <p className="text-2xl sm:text-3xl font-black text-white">4.2<span className="text-xs text-green-400 ml-1">lt</span></p>
+              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Clio Hibrit Tüketim</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">630<span className="text-xs text-cyan-400 ml-1">km</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Elektrikli Menzil</p>
+              <p className="text-2xl sm:text-3xl font-black text-white">854<span className="text-xs text-amber-400 ml-1">L</span></p>
+              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Model Y Dev Bagaj</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">12+<span className="text-xs text-amber-400 ml-1">Seçkin</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Ayrıntılı Model</p>
+              <p className="text-2xl sm:text-3xl font-black text-white">12+<span className="text-xs text-red-500 ml-1">Model</span></p>
+              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Türkiye Gerçek Veri</p>
             </div>
           </div>
         </div>

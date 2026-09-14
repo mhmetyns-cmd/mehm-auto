@@ -15,7 +15,20 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({
   onReset,
   totalResults
 }) => {
-  const brands = ['Tümü', 'Porsche', 'BMW', 'Mercedes-Benz', 'Tesla', 'Audi', 'Ferrari', 'Land Rover', 'Volkswagen'];
+  const brands = [
+    'Tümü',
+    'Togg',
+    'Fiat',
+    'Renault',
+    'Toyota',
+    'Volkswagen',
+    'Tesla',
+    'Hyundai',
+    'Peugeot',
+    'Dacia',
+    'BMW',
+    'Mercedes-Benz'
+  ];
   const fuelTypes = ['Tümü', 'Benzin', 'Hibrit', 'Elektrik', 'Dizel'];
   const categories = ['Tümü', 'SUV', 'Sedan', 'Hatchback', 'Elektrikli', 'Spor', 'Premium'];
 
@@ -46,7 +59,7 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({
           <div>
             <div className="flex items-center gap-2 text-red-500 font-semibold text-sm mb-1 uppercase tracking-wider">
               <Filter className="w-4 h-4" />
-              <span>Gelişmiş Filtreleme</span>
+              <span>Türkiye Pazarı Filtreleme</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white">Hayalindeki Otomobili Bul</h2>
           </div>
@@ -75,7 +88,7 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({
             </label>
             <input
               type="text"
-              placeholder="Örn: 911, M4, Plaid..."
+              placeholder="Örn: T10X, Egea, Corolla, Golf..."
               value={filter.searchQuery}
               onChange={handleSearchChange}
               className="w-full bg-[#161922] border border-[#232736] rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
@@ -147,10 +160,11 @@ export const SearchFilter: React.FC<SearchFilterProps> = ({
               className="w-full bg-[#161922] border border-[#232736] rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors cursor-pointer"
             >
               <option value="0" className="bg-[#161922]">Fark Etmez (Limitsiz)</option>
-              <option value="6000000" className="bg-[#161922]">6.000.000 ₺'ye kadar</option>
-              <option value="10000000" className="bg-[#161922]">10.000.000 ₺'ye kadar</option>
-              <option value="15000000" className="bg-[#161922]">15.000.000 ₺'ye kadar</option>
-              <option value="20000000" className="bg-[#161922]">20.000.000 ₺'ye kadar</option>
+              <option value="1500000" className="bg-[#161922]">1.500.000 ₺'ye kadar</option>
+              <option value="2000000" className="bg-[#161922]">2.000.000 ₺'ye kadar</option>
+              <option value="2500000" className="bg-[#161922]">2.500.000 ₺'ye kadar</option>
+              <option value="3500000" className="bg-[#161922]">3.500.000 ₺'ye kadar</option>
+              <option value="5000000" className="bg-[#161922]">5.000.000 ₺'ye kadar</option>
             </select>
           </div>
         </div>

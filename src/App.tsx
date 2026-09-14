@@ -23,9 +23,9 @@ export function App() {
   const [favoriteIds, setFavoriteIds] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem('mehmet_auto_favorites');
-      return saved ? JSON.parse(saved) : ['porsche-911-gt3-rs', 'bmw-m4-competition'];
+      return saved ? JSON.parse(saved) : ['togg-t10x-v2', 'toyota-corolla-hybrid'];
     } catch {
-      return ['porsche-911-gt3-rs', 'bmw-m4-competition'];
+      return ['togg-t10x-v2', 'toyota-corolla-hybrid'];
     }
   });
 
@@ -42,9 +42,9 @@ export function App() {
   const [isFavoritesOpen, setIsFavoritesOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Comparison State
+  // Comparison State (Default: TOGG T10X vs Tesla Model Y)
   const [compareCarA, setCompareCarA] = useState<Car>(carsData[0]);
-  const [compareCarB, setCompareCarB] = useState<Car>(carsData[1]);
+  const [compareCarB, setCompareCarB] = useState<Car>(carsData[6] || carsData[1]);
 
   // Filter State
   const initialFilter: FilterState = {
@@ -115,7 +115,7 @@ export function App() {
     return carsData.filter((c) => c.fuelType === 'Elektrik' || c.isElectric);
   }, []);
 
-  // Featured car of the week (Porsche 911 GT3 RS)
+  // Featured car of the week (TOGG T10X)
   const featuredCarOfWeek = useMemo(() => {
     return carsData.find((c) => c.isFeatured) || carsData[0];
   }, []);
@@ -189,16 +189,16 @@ export function App() {
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-red-500 tracking-widest uppercase mb-1">
                 <CarFront className="w-4 h-4" />
-                <span>Kapsamlı Araç Kataloğu</span>
+                <span>Türkiye Otomobil Kataloğu</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white">
                 {filter.category !== 'Tümü' || filter.brand !== 'Tümü' || filter.searchQuery
                   ? 'Filtrelenmiş Sonuçlar'
-                  : 'Tüm Otomobiller'}
+                  : 'Türkiye Yollarının Tüm Modelleri'}
               </h2>
             </div>
             <p className="text-gray-400 text-sm">
-              Toplam <span className="text-white font-bold">{filteredCars.length}</span> model sergileniyor
+              Toplam <span className="text-white font-bold">{filteredCars.length}</span> model listeleniyor
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export function App() {
               <CarFront className="w-16 h-16 text-gray-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Aradığınız kriterlere uygun araç bulunamadı</h3>
               <p className="text-sm text-gray-400 max-w-md mx-auto mb-6">
-                Farklı bir marka, model veya filtre seçmeyi deneyebilir veya filtreleri sıfırlayabilirsiniz.
+                Farklı bir marka, model veya bütçe seçmeyi deneyebilir veya filtreleri sıfırlayabilirsiniz.
               </p>
               <button
                 onClick={() => setFilter(initialFilter)}
@@ -239,10 +239,10 @@ export function App() {
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-500 tracking-widest uppercase mb-1">
                   <Flame className="w-4 h-4 text-amber-500" />
-                  <span>En Çok İlgi Görenler</span>
+                  <span>Türkiye'de Çok Satanlar</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-black text-white">Popüler Otomobiller</h2>
-                <p className="text-gray-400 text-sm mt-1">Son dönemin dikkat çeken modellerini keşfet.</p>
+                <p className="text-gray-400 text-sm mt-1">Türkiye sokaklarında en çok tercih edilen modelleri keşfet.</p>
               </div>
             </div>
 
