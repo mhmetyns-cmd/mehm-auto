@@ -21,6 +21,12 @@ export const carsData: Car[] = [
     driveTrain: 'RWD (Arkadan İtiş)',
     trunkCapacity: 441,
     image: '/images/togg-t10x.jpg',
+    gallery: [
+      '/images/togg-t10x.jpg',
+      '/images/togg-t10x-rear.jpg',
+      '/images/togg-t10x-interior.jpg',
+      '/images/togg-t10x-side.jpg'
+    ],
     description: 'Türkiye’nin yerli ve milli gururu C-SUV akıllı cihazı. Trumore ekosistemi, uçtan uca panoramik ekran ve 523 km menzil.',
     features: ['Uçtan Uca 29 inç Bilgi-Eğlence Ekranı', 'Trumore Akıllı Ekosistem', 'Cam Tavan', 'Seviye 2 Sürüş Asistanı', 'Kör Nokta Uyarısı'],
     isFeatured: true,
@@ -52,6 +58,12 @@ export const carsData: Car[] = [
     driveTrain: 'RWD (Arkadan İtiş)',
     trunkCapacity: 400,
     image: '/images/tofas-dogan.jpg',
+    gallery: [
+      '/images/tofas-dogan.jpg',
+      '/images/tofas-dogan-rear.jpg',
+      '/images/tofas-dogan-interior.jpg',
+      '/images/tofas-dogan-side.jpg'
+    ],
     description: 'Türkiye’nin sokak ve modifiye kültürünün taçsız kralı. CMS 40 jant efsanesi, arkadan itişli mekanik sürüş zevki ve ucuz parça bolluğu.',
     features: ['CMS 40 Alaşım Jant', 'Merkezi Kilit & Otomatik Ön Camlar', 'Hidrolik Direksiyon', 'Ön Sis Farları', 'Pioneer Teyp & Ses Sistemi Opsiyonu'],
   },
@@ -75,6 +87,12 @@ export const carsData: Car[] = [
     driveTrain: 'AWD (4x4)',
     trunkCapacity: 889,
     image: '/images/chery-tiggo-8.jpg',
+    gallery: [
+      '/images/chery-tiggo-8.jpg',
+      '/images/chery-tiggo-8-rear.jpg',
+      '/images/chery-tiggo-8-interior.jpg',
+      '/images/chery-tiggo-8-side.jpg'
+    ],
     description: 'Türkiye pazarında fırtınalar estiren 7 koltuklu lüks aile SUV’si. Çift 12.3 inç kavisli ekran, Sony ses sistemi ve zengin donanım paketi.',
     features: ['7 Kişilik Geniş Oturma Düzeni', 'Sony 8 Hoparlörlü Ses Sistemi', '540 Derece Gelişmiş Çevre Görüş', 'Kablosuz 50W Hızlı Şarj', 'Akıllı Sesli Komut Asistanı'],
   },
@@ -98,6 +116,12 @@ export const carsData: Car[] = [
     driveTrain: 'FWD (Önden Çekiş)',
     trunkCapacity: 520,
     image: '/images/fiat-egea.jpg',
+    gallery: [
+      '/images/fiat-egea.jpg',
+      '/images/fiat-egea-rear.jpg',
+      '/images/fiat-egea-interior.jpg',
+      '/images/fiat-egea-side.jpg'
+    ],
     description: 'Türkiye yollarının en çok satan efsanevi modeli. Yüksek yakıt verimliliği, 520 litrelik devasa bagaj hacmi ve ekonomik parça maliyeti.',
     features: ['10 inç Dokunmatik Tablet Ekran', 'Kablosuz Apple CarPlay & Android Auto', 'Kör Nokta Uyarı Sistemi', 'Full LED Ön Farlar', 'Geri Görüş Kamerası'],
   },
@@ -121,6 +145,12 @@ export const carsData: Car[] = [
     driveTrain: 'FWD (Önden Çekiş)',
     trunkCapacity: 391,
     image: '/images/renault-clio.jpg',
+    gallery: [
+      '/images/renault-clio.jpg',
+      '/images/renault-clio-rear.jpg',
+      '/images/renault-clio-interior.jpg',
+      '/images/renault-clio-side.jpg'
+    ],
     description: 'Şehir içi sürüşün %80’ini elektrikle tamamlayan tasarruf ustası. Yenilenen agresif ön ızgara ve esportif Esprit Alpine detayları.',
     features: ['Esprit Alpine Tasarım Paketi', '9.3 inç Dikey Multimedya', 'Kablosuz Akıllı Şarj', 'Şerit Takip Asistanı', 'Geri Görüş Kamerası'],
   },
@@ -144,6 +174,12 @@ export const carsData: Car[] = [
     driveTrain: 'FWD (Önden Çekiş)',
     trunkCapacity: 471,
     image: '/images/toyota-corolla.jpg',
+    gallery: [
+      '/images/toyota-corolla.jpg',
+      '/images/toyota-corolla-rear.jpg',
+      '/images/toyota-corolla-interior.jpg',
+      '/images/toyota-corolla-side.jpg'
+    ],
     description: 'Sakarya fabrikasında üretilen dünyanın en çok satan otomobili. Sorunsuzluk simgesi 5. nesil hibrit motoruyla şehirde yakıtı unutturur.',
     features: ['Toyota Safety Sense 3.0', '12.3 inç Dijital Gösterge', 'Kablosuz Şarj Ünitesi', 'Akıllı Giriş ve Çalıştırma', 'Adaptif Hız Sabitleyici'],
   },
@@ -167,6 +203,12 @@ export const carsData: Car[] = [
     driveTrain: 'AWD (4x4)',
     trunkCapacity: 472,
     image: '/images/dacia-duster.jpg',
+    gallery: [
+      '/images/dacia-duster.jpg',
+      '/images/dacia-duster-rear.jpg',
+      '/images/dacia-duster-interior.jpg',
+      '/images/dacia-duster-side.jpg'
+    ],
     description: 'Türkiye dağlarının ve zorlu yollarının ekonomik fatihi. Yeni nesil keskin köşeli hatlar, 21.7 cm yerden yükseklik ve kilitli 4x4.',
     features: ['YouClip Akıllı Aksesuar Sistemi', '4x4 Arazi Monitörü', 'Yokuş İniş Desteği', 'Modüler Tavan Barları', 'Yıkanabilir Extreme Döşeme'],
   },
@@ -190,6 +232,12 @@ export const carsData: Car[] = [
     driveTrain: 'FWD (Önden Çekiş)',
     trunkCapacity: 381,
     image: '/images/vw-golf.jpg',
+    gallery: [
+      '/images/vw-golf.jpg',
+      '/images/vw-golf-rear.jpg',
+      '/images/vw-golf-interior.jpg',
+      '/images/vw-golf-side.jpg'
+    ],
     description: 'Kompakt sınıfın altın standardı. 48V hafif hibrit destekli eTSI motor, R-Line spor gövde kiti ve üstün otoyol yalıtımı.',
     features: ['IQ.LIGHT LED Matrix Farlar', 'R-Line Spor Koltuklar', 'Panoramik Açılır Cam Tavan', 'Harman Kardon Ses Sistemi', 'Dinamik Şasi Kontrolü'],
   },
@@ -213,6 +261,12 @@ export const carsData: Car[] = [
     driveTrain: 'RWD (Arkadan İtiş)',
     trunkCapacity: 854,
     image: '/images/tesla-model-y.jpg',
+    gallery: [
+      '/images/tesla-model-y.jpg',
+      '/images/tesla-model-y-rear.jpg',
+      '/images/tesla-model-y-interior.jpg',
+      '/images/tesla-model-y-side.jpg'
+    ],
     description: 'Türkiye’de %10’luk ÖTV dilimine girerek satış rekorları kıran elektrikli SUV. 854 litre dev bagaj ve Supercharger şarj ağı.',
     features: ['15 inç Dokunmatik Ana Ekran', 'Standart Otopilot Sistemi', 'Cam Tavan', 'Sentry Mode Güvenlik', 'Isı Pompalı İklimlendirme'],
     isElectric: true,
@@ -243,6 +297,12 @@ export const carsData: Car[] = [
     driveTrain: 'AWD (4x4)',
     trunkCapacity: 577,
     image: '/images/hyundai-tucson.jpg',
+    gallery: [
+      '/images/hyundai-tucson.jpg',
+      '/images/hyundai-tucson-rear.jpg',
+      '/images/hyundai-tucson-interior.jpg',
+      '/images/hyundai-tucson-side.jpg'
+    ],
     description: 'Parametrik gizli far tasarımı, geniş aile kabini ve HTRAC 4 çeker sistemi ile Türk ailelerinin en sevdiği SUV modellerinden biri.',
     features: ['Parametrik Gizli LED Farlar', 'HTRAC Akıllı Dört Çeker', 'Krell Premium Ses Sistemi', 'Koltuk Isıtma & Soğutma', '360 Çevre Görüş Kamerası'],
   },
@@ -266,6 +326,12 @@ export const carsData: Car[] = [
     driveTrain: 'FWD (Önden Çekiş)',
     trunkCapacity: 536,
     image: '/images/peugeot-408.jpg',
+    gallery: [
+      '/images/peugeot-408.jpg',
+      '/images/peugeot-408-rear.jpg',
+      '/images/peugeot-408-interior.jpg',
+      '/images/peugeot-408-side.jpg'
+    ],
     description: 'Fastback silüetini SUV duruşuyla harmanlayan Türkiye yollarının en dikkat çekici tasarımı. Küçük direksiyonlu 3D i-Cockpit.',
     features: ['3D Dijital Gösterge Paneli', 'Peugeot Matrix LED Teknolojisi', 'Masaj Fonksiyonlu Koltuklar', 'Focal Hi-Fi Ses Sistemi', 'Drive Assist Plus'],
   },
@@ -289,6 +355,12 @@ export const carsData: Car[] = [
     driveTrain: 'FWD (Önden Çekiş)',
     trunkCapacity: 690,
     image: '/images/vw-passat.jpg',
+    gallery: [
+      '/images/vw-passat.jpg',
+      '/images/vw-passat-rear.jpg',
+      '/images/vw-passat-interior.jpg',
+      '/images/vw-passat-side.jpg'
+    ],
     description: 'Türk sürücüsünün konfor ve prestij simgesi efsane Passat’ın en yeni kasası. 690 litrelik dev bagaj ve Business class konfor.',
     features: ['15 inç Geniş Eğlence Ekranı', 'ergoActive Masajlı Ön Koltuklar', 'IQ.LIGHT LED Matrix', 'DCC Pro Çift Valfli Süspansiyon'],
   },
@@ -312,6 +384,12 @@ export const carsData: Car[] = [
     driveTrain: 'RWD (Arkadan İtiş)',
     trunkCapacity: 480,
     image: '/images/bmw-320i.jpg',
+    gallery: [
+      '/images/bmw-320i.jpg',
+      '/images/bmw-320i-rear.jpg',
+      '/images/bmw-320i-interior.jpg',
+      '/images/bmw-320i-side.jpg'
+    ],
     description: 'Türkiye vergi dilimine özel 1.6L 170 beygirlik motoru, 50:50 kusursuz ağırlık dağılımı ve safkan arkadan itişli sürüş zevki.',
     features: ['BMW Kavisli Ekran (Curved Display)', 'M Sport Aerodinamik Paket', 'Harman Kardon Ses Sistemi', 'Değişken Spor Direksiyon', 'Kablosuz Şarj'],
   },
@@ -335,6 +413,12 @@ export const carsData: Car[] = [
     driveTrain: 'AWD (4x4)',
     trunkCapacity: 455,
     image: '/images/mercedes-c200.jpg',
+    gallery: [
+      '/images/mercedes-c200.jpg',
+      '/images/mercedes-c200-rear.jpg',
+      '/images/mercedes-c200-interior.jpg',
+      '/images/mercedes-c200-side.jpg'
+    ],
     description: 'S-Serisi teknolojilerini kompakt sınıfa taşıyan lüks sedan. 4MATIC dört çeker, 204 beygir güç ve dikey merkezi MBUX ekranı.',
     features: ['11.9 inç Dikey MBUX Multimedya', 'Burmester 3D Surround Ses', 'AMG İç ve Dış Tasarım Paketi', 'Panoramik Sunroof', 'Akıllı Park Pilotu'],
   }
