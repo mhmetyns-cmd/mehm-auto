@@ -9,7 +9,7 @@ export const newsData: NewsItem[] = [
     category: 'Pazar & Satış',
     date: '12 Mart 2026',
     readTime: '4 dk okuma',
-    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/togg-t10x.jpg',
     author: 'Otomotiv Editörü Burak Çelik'
   },
   {

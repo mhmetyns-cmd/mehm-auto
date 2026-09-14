@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
       {/* Background Image with Cinematic Dark Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=2000&q=85"
+          src="/images/togg-t10x.jpg"
           alt="MEHMET AUTO Türkiye Otomobil Keşif Platformu"
           className="w-full h-full object-cover object-center scale-105 transform motion-safe:animate-pulse transition-transform duration-1000 ease-out"
           style={{ animationDuration: '8s' }}
