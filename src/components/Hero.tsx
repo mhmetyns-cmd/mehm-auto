@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <button
               onClick={onExploreCars}
               className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white font-bold text-base shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:scale-[1.02] active:scale-[0.98] transition-all"
@@ -62,26 +62,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
               <Zap className="w-5 h-5 text-amber-400" />
               <span>⚡ Popüler Modeller</span>
             </button>
-          </div>
-
-          {/* Live Quick Metrics for Turkey Market */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10">
-            <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">523<span className="text-xs text-cyan-400 ml-1">km</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">TOGG T10X Menzil</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">4.2<span className="text-xs text-green-400 ml-1">lt</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Clio Hibrit Tüketim</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">854<span className="text-xs text-amber-400 ml-1">L</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Model Y Dev Bagaj</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-black text-white">12+<span className="text-xs text-red-500 ml-1">Model</span></p>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Türkiye Gerçek Veri</p>
-            </div>
           </div>
         </div>
       </div>
