@@ -67,10 +67,17 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
       </div>
 
       {/* Scroll Down Hint */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center text-gray-400 text-xs">
-        <span className="mb-1 opacity-70">Aşağı Kaydır</span>
-        <ChevronDown className="w-5 h-5 animate-bounce text-red-500" />
-      </div>
+      <button
+        onClick={onExploreCars}
+        type="button"
+        aria-label="Aşağı Kaydır"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 px-5 py-2.5 rounded-full bg-[#0d111a]/90 hover:bg-[#161c2b] border border-white/25 hover:border-red-500 text-white shadow-2xl shadow-black/80 backdrop-blur-lg transition-all duration-300 hover:scale-105 group cursor-pointer"
+      >
+        <span className="text-xs sm:text-sm font-bold tracking-wider text-gray-100 group-hover:text-red-400 transition-colors flex items-center gap-1.5">
+          <span>Aşağı Kaydır</span>
+        </span>
+        <ChevronDown className="w-5 h-5 text-red-500 animate-bounce group-hover:text-red-400" />
+      </button>
     </section>
   );
 };
