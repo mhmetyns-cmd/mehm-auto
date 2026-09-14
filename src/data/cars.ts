@@ -1,6 +1,6 @@
 import type { Car } from '../types';
 
-const rawCarsData: Car[] = [
+export const carsData: Car[] = [
   {
     id: 'togg-t10x-v2',
     name: 'TOGG T10X V2 Uzun Menzil',
@@ -423,10 +423,3 @@ const rawCarsData: Car[] = [
     features: ['11.9 inç Dikey MBUX Multimedya', 'Burmester 3D Surround Ses', 'AMG İç ve Dış Tasarım Paketi', 'Panoramik Sunroof', 'Akıllı Park Pilotu'],
   }
 ];
-
-export const carsData: Car[] = rawCarsData.map((car) => ({
-  ...car,
-  plate: car.plate || '34 MMT 34',
-}));
-
-

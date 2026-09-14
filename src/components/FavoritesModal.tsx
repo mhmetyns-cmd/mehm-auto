@@ -1,7 +1,6 @@
 import React from 'react';
 import { X, Heart, Trash2, Eye, GitCompare } from 'lucide-react';
 import type { Car } from '../types';
-import { LicensePlate } from './LicensePlate';
 
 interface FavoritesModalProps {
   isOpen: boolean;
@@ -63,10 +62,7 @@ export const FavoritesModal: React.FC<FavoritesModalProps> = ({
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[10px] font-bold text-red-400 uppercase">{car.brand}</span>
-                    <LicensePlate plate={car.plate || '34 MMT 34'} size="sm" className="scale-90 origin-left" />
-                  </div>
+                  <span className="text-[10px] font-bold text-red-400 uppercase">{car.brand}</span>
                   <h4 className="text-sm font-bold text-white truncate">{car.name}</h4>
                   <p className="text-xs font-black text-gray-200">{car.priceFormatted}</p>
                 </div>

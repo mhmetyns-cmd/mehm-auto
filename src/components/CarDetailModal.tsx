@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { X, Heart, Gauge, Zap, GitCompare, ShieldCheck, CheckCircle2, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import type { Car } from '../types';
-import { LicensePlate } from './LicensePlate';
 
 interface CarDetailModalProps {
   car: Car | null;
@@ -146,14 +145,13 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
 
           {/* Title overlay */}
           <div className="absolute bottom-4 left-6 right-6">
-            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+            <div className="flex items-center gap-2 mb-1.5">
               <span className="px-2.5 py-0.5 rounded-md bg-red-600 text-[11px] font-black uppercase tracking-wider text-white inline-block">
                 {car.category}
               </span>
               <span className="text-xs font-semibold text-red-400 bg-red-950/60 border border-red-500/30 px-2.5 py-0.5 rounded-md">
                 {angleLabels[activeImageIndex]?.badge || 'Görünüm'}
               </span>
-              <LicensePlate plate={car.plate || '34 MMT 34'} size="sm" />
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-white">{car.name}</h2>
             <p className="text-xs sm:text-sm text-gray-300 font-medium">{car.brand} · {car.year} Model</p>
@@ -215,8 +213,7 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
               <span className="text-xs text-gray-400 block font-medium">Tavsiye Edilen Başlangıç Fiyatı</span>
               <span className="text-2xl sm:text-3xl font-black text-white">{car.priceFormatted}</span>
             </div>
-            <div className="flex items-center gap-3 flex-wrap">
-              <LicensePlate plate={car.plate || '34 MMT 34'} size="md" />
+            <div className="flex items-center gap-3">
               <button
                 onClick={() => {
                   onCompareWith(car);

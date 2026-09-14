@@ -1,7 +1,6 @@
 import React from 'react';
 import { Heart, Gauge, Eye, GitCompare } from 'lucide-react';
 import type { Car } from '../types';
-import { LicensePlate } from './LicensePlate';
 
 interface CarCardProps {
   car: Car;
@@ -56,11 +55,6 @@ export const CarCard: React.FC<CarCardProps> = ({
             }`}
           />
         </button>
-
-        {/* License Plate */}
-        <div className="absolute bottom-2 left-3 z-10">
-          <LicensePlate plate={car.plate || '34 MMT 34'} size="sm" />
-        </div>
 
         {/* Acceleration Badge */}
         <div className="absolute bottom-2 right-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 flex items-center gap-1.5 text-xs text-white">
