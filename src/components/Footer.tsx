@@ -31,12 +31,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToSection }) => {
               onClick={scrollToTop} 
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-black shadow-lg shadow-red-500/30">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 via-orange-500 to-red-700 flex items-center justify-center text-white font-black shadow-lg shadow-red-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <Gauge className="w-6 h-6 stroke-[2.5]" />
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 brand-playful-nav">
                 <span className="text-xl font-black tracking-wider text-white">MEHMET</span>
-                <span className="text-xl font-black tracking-wider text-red-500">AUTO</span>
+                <span className="text-xl font-black tracking-wider brand-shimmer-red">AUTO</span>
               </div>
             </div>
 

@@ -53,15 +53,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => handleLinkClick('hero')} 
           className="flex items-center gap-3 cursor-pointer group select-none"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-black shadow-lg shadow-red-500/30 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 via-orange-500 to-red-700 flex items-center justify-center text-white font-black shadow-lg shadow-red-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
             <Gauge className="w-6 h-6 stroke-[2.5]" />
           </div>
-          <div>
+          <div className="brand-playful-nav">
             <div className="flex items-center gap-1.5">
-              <span className="text-xl font-black tracking-wider text-white">MEHMET</span>
-              <span className="text-xl font-black tracking-wider text-red-500">AUTO</span>
+              <span className="text-xl font-black tracking-wider text-white group-hover:text-gray-100 transition-colors">MEHMET</span>
+              <span className="text-xl font-black tracking-wider brand-shimmer-red">AUTO</span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-ping ml-0.5"></span>
             </div>
-            <p className="text-[10px] text-gray-400 font-medium tracking-widest uppercase">Keşfet & İncele</p>
+            <p className="text-[10px] text-gray-400 font-medium tracking-widest uppercase group-hover:text-red-400 transition-colors">Keşfet & İncele</p>
           </div>
         </div>
 

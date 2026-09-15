@@ -34,8 +34,16 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCars, onPopularCars }) => {
           </div>
 
           {/* Main Titles */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] mb-4">
-            MEHMET <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">AUTO</span>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-4 select-none">
+            <span className="brand-playful-hero cursor-pointer group">
+              <span className="text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] group-hover:tracking-wider transition-all duration-300">
+                MEHMET
+              </span>
+              <span className="brand-shimmer-red font-black tracking-wider relative ml-2">
+                AUTO
+                <span className="absolute -top-2 -right-4 sm:-right-6 text-xs sm:text-sm font-bold text-amber-400 animate-bounce">⚡</span>
+              </span>
+            </span>
           </h1>
 
           <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-200 tracking-wide mb-6">
