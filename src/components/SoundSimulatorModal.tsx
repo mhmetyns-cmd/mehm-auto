@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { X, Volume2, VolumeX, Flame, Gauge, Sparkles } from 'lucide-react';
+import { X, Volume2, VolumeX, Flame, Zap, Gauge, Sparkles } from 'lucide-react';
 import { soundEngine, getCarEngineProfile, type EngineProfileType } from '../utils/soundEngine';
 import type { Car } from '../types';
 
