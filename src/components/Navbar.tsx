@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Menu, X, ChevronRight, Gauge, Volume2 } from 'lucide-react';
+import { Heart, Menu, X, ChevronRight, Gauge } from 'lucide-react';
 
 interface NavbarProps {
   favoriteCount: number;
   onOpenFavorites: () => void;
   onNavigateToSection: (sectionId: string) => void;
-  onOpenSoundSimulator: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   favoriteCount,
   onOpenFavorites,
-  onNavigateToSection,
-  onOpenSoundSimulator
+  onNavigateToSection
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -82,25 +80,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Sound Simulator Button */}
-          <button
-            onClick={onOpenSoundSimulator}
-            className="relative p-2.5 sm:px-3.5 rounded-xl bg-gradient-to-r from-red-950/50 via-[#161922] to-amber-950/40 border border-red-500/40 text-gray-200 hover:text-white hover:border-red-500 transition-all flex items-center gap-2 group cursor-pointer shadow-lg shadow-red-950/30 hover:scale-105"
-            title="Ses Stüdyosu - Motor & Egzoz Sesi"
-            aria-label="Ses Stüdyosu"
-          >
-            <Volume2 className="w-4 h-4 text-red-400 group-hover:text-amber-400 group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-amber-300">
-              Ses Stüdyosu
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping hidden sm:inline-block" />
-          </button>
-
+        <div className="flex items-center gap-3">
           {/* Favorites Button */}
           <button
             onClick={onOpenFavorites}
-            className="relative p-2.5 rounded-xl bg-[#161922] border border-[#232736] text-gray-300 hover:text-red-400 hover:border-red-500/50 transition-all flex items-center gap-2 cursor-pointer"
+            className="relative p-2.5 rounded-xl bg-[#161922] border border-[#232736] text-gray-300 hover:text-red-400 hover:border-red-500/50 transition-all flex items-center gap-2"
             title="Favorilerim"
             aria-label="Favoriler"
           >
@@ -116,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Primary CTA */}
           <button
             onClick={() => handleLinkClick('filtre')}
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white font-semibold text-sm shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all hover:-translate-y-0.5 cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white font-semibold text-sm shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all hover:-translate-y-0.5"
           >
             <span>Aracını Keşfet</span>
             <ChevronRight className="w-4 h-4" />
@@ -125,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-[#161922] border border-[#232736] text-gray-300 hover:text-white cursor-pointer"
+            className="lg:hidden p-2.5 rounded-xl bg-[#161922] border border-[#232736] text-gray-300 hover:text-white"
             aria-label="Menüyü Aç"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -149,17 +133,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
             
             <div className="pt-4 border-t border-[#232736] mt-2 flex flex-col gap-3">
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  onOpenSoundSimulator();
-                }}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-red-950/70 to-amber-950/60 border border-red-500/50 text-white font-bold text-sm"
-              >
-                <Volume2 className="w-4 h-4 text-amber-400" />
-                <span>🔊 Motor & Egzoz Ses Stüdyosu</span>
-              </button>
-              
               <button
                 onClick={() => handleLinkClick('filtre')}
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-red-600 text-white font-semibold shadow-lg shadow-red-600/30"
