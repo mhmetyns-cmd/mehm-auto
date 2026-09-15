@@ -15,6 +15,7 @@ import { WhyUs } from './components/WhyUs';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { FavoritesModal } from './components/FavoritesModal';
+import { SoundSimulatorModal } from './components/SoundSimulatorModal';
 import { Footer } from './components/Footer';
 import { CarFront, Check, Flame } from 'lucide-react';
 
@@ -40,6 +41,8 @@ export function App() {
   // Modals state
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [isFavoritesOpen, setIsFavoritesOpen] = useState<boolean>(false);
+  const [isSoundSimulatorOpen, setIsSoundSimulatorOpen] = useState<boolean>(false);
+  const [soundSimulatorCar, setSoundSimulatorCar] = useState<Car | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Comparison State (Default: TOGG T10X vs Tesla Model Y)
@@ -166,6 +169,10 @@ export function App() {
         favoriteCount={favoriteIds.length}
         onOpenFavorites={() => setIsFavoritesOpen(true)}
         onNavigateToSection={navigateToSection}
+        onOpenSoundSimulator={() => {
+          setSoundSimulatorCar(null);
+          setIsSoundSimulatorOpen(true);
+        }}
       />
 
       {/* 4. Hero Section */}
@@ -302,6 +309,10 @@ export function App() {
         isFavorite={selectedCar ? favoriteIds.includes(selectedCar.id) : false}
         onToggleFavorite={handleToggleFavorite}
         onCompareWith={handleAddToCompare}
+        onOpenSoundSimulator={(car) => {
+          setSoundSimulatorCar(car);
+          setIsSoundSimulatorOpen(true);
+        }}
       />
 
       {/* Favorites Drawer / Modal */}
@@ -312,6 +323,14 @@ export function App() {
         onRemoveFavorite={handleToggleFavorite}
         onSelectCar={setSelectedCar}
         onCompareWith={handleAddToCompare}
+      />
+
+      {/* Sound Simulator Modal */}
+      <SoundSimulatorModal
+        isOpen={isSoundSimulatorOpen}
+        onClose={() => setIsSoundSimulatorOpen(false)}
+        cars={carsData}
+        initialCar={soundSimulatorCar}
       />
     </div>
   );

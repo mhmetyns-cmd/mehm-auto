@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { X, Heart, Gauge, Zap, GitCompare, ShieldCheck, CheckCircle2, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { X, Heart, Gauge, Zap, GitCompare, ShieldCheck, CheckCircle2, ChevronLeft, ChevronRight, Camera, Volume2, Flame } from 'lucide-react';
+import { soundEngine, getCarEngineProfile } from '../utils/soundEngine';
 import type { Car } from '../types';
 
 interface CarDetailModalProps {
@@ -8,6 +9,7 @@ interface CarDetailModalProps {
   isFavorite: boolean;
   onToggleFavorite: (carId: string) => void;
   onCompareWith: (car: Car) => void;
+  onOpenSoundSimulator?: (car: Car) => void;
 }
 
 const angleLabels = [
@@ -22,9 +24,57 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
   onClose,
   isFavorite,
   onToggleFavorite,
-  onCompareWith
+  onCompareWith,
+  onOpenSoundSimulator
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isModalReving, setIsModalReving] = useState(false);
+  const [modalRpm, setModalRpm] = useState(850);
+  const modalRevIntervalRef = useRef<number | null>(null);
+
+  // Stop sound when modal closes or car changes
+  useEffect(() => {
+    return () => {
+      soundEngine.stop();
+      if (modalRevIntervalRef.current) clearInterval(modalRevIntervalRef.current);
+    };
+  }, [car?.id]);
+
+  const startModalRev = () => {
+    if (!car) return;
+    const prof = getCarEngineProfile(car);
+    soundEngine.start(prof);
+    setIsModalReving(true);
+    if (modalRevIntervalRef.current) clearInterval(modalRevIntervalRef.current);
+
+    modalRevIntervalRef.current = window.setInterval(() => {
+      setModalRpm((prev) => {
+        const next = Math.min(7200, prev + 300);
+        soundEngine.setRpm(next, 0.05);
+        if (next >= 6800 && Math.random() > 0.6) soundEngine.triggerPop();
+        return next;
+      });
+    }, 40);
+  };
+
+  const stopModalRev = () => {
+    setIsModalReving(false);
+    if (modalRevIntervalRef.current) {
+      clearInterval(modalRevIntervalRef.current);
+      modalRevIntervalRef.current = null;
+    }
+    if (car) {
+      const prof = getCarEngineProfile(car);
+      if (modalRpm > 4000) {
+        if (prof === 'turbo') soundEngine.triggerBlowOff();
+        else if (prof !== 'electric') soundEngine.triggerPop();
+      }
+    }
+    setTimeout(() => {
+      soundEngine.stop();
+      setModalRpm(850);
+    }, 500);
+  };
 
   // Reset active photo index whenever car changes
   useEffect(() => {
@@ -224,6 +274,64 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
                 <GitCompare className="w-4 h-4" />
                 <span>Karşılaştırmaya Ekle</span>
               </button>
+            </div>
+          </div>
+
+          {/* Motor & Egzoz Sesi Simulator Card */}
+          <div className="p-5 rounded-2xl bg-gradient-to-r from-red-950/30 via-[#161922] to-amber-950/20 border border-red-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-400 shrink-0">
+                <Volume2 className={`w-6 h-6 ${isModalReving ? 'animate-bounce text-amber-400' : ''}`} />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-white">Motor & Egzoz Sesi Deneyimi</h4>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-red-600/30 text-red-300 border border-red-500/30 uppercase">
+                    {getCarEngineProfile(car) === 'electric' ? 'Elektrikli İtiş' : 'Canlı Sentez'}
+                  </span>
+                </div>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  {getCarEngineProfile(car) === 'electric'
+                    ? 'Fütüristik elektrik motoru rezonansı ve tork ivmelenme sesi'
+                    : getCarEngineProfile(car) === 'v8'
+                    ? 'Derin V8 homurtusu, yüksek devir kükremesi ve egzoz patlamaları'
+                    : getCarEngineProfile(car) === 'diesel'
+                    ? '1.6 MultiJet torklu dizel sıkıştırma titreşimi'
+                    : 'Turbo benzinli yüksek devir sesi ve blow-off valfi'}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                onMouseDown={startModalRev}
+                onMouseUp={stopModalRev}
+                onMouseLeave={stopModalRev}
+                onTouchStart={startModalRev}
+                onTouchEnd={stopModalRev}
+                className={`relative px-5 py-3 rounded-xl font-bold text-xs tracking-wider uppercase transition-all select-none cursor-pointer flex items-center gap-2 ${
+                  isModalReving
+                    ? 'bg-gradient-to-r from-red-600 to-amber-500 text-white shadow-xl shadow-red-600/50 scale-95 ring-2 ring-red-400'
+                    : 'bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-600/30'
+                }`}
+              >
+                <Flame className={`w-4 h-4 ${isModalReving ? 'animate-bounce text-yellow-300' : ''}`} />
+                <span>{isModalReving ? `${Math.round(modalRpm)} RPM · GAZLANDI!` : 'GAZI KÖKLE (BASILI TUT)'}</span>
+              </button>
+
+              {onOpenSoundSimulator && (
+                <button
+                  onClick={() => {
+                    onClose();
+                    onOpenSoundSimulator(car);
+                  }}
+                  className="px-4 py-3 rounded-xl bg-[#232736] hover:bg-[#2d3347] text-gray-200 hover:text-white text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer shrink-0"
+                  title="Tam Ekran Ses Stüdyosu"
+                >
+                  <Gauge className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Stüdyo</span>
+                </button>
+              )}
             </div>
           </div>
 
