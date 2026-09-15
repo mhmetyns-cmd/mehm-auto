@@ -31,7 +31,7 @@ export const newsData: NewsItem[] = [
     category: 'Karşılaştırma',
     date: '08 Mart 2026',
     readTime: '6 dk okuma',
-    image: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/fiat-egea.jpg',
     author: 'Test Editörü Caner Demir'
   },
   {
@@ -42,7 +42,7 @@ export const newsData: NewsItem[] = [
     category: 'Altyapı',
     date: '05 Mart 2026',
     readTime: '3 dk okuma',
-    image: 'https://images.unsplash.com/photo-1558441719-aa3445544f50?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/ev-charging.jpg',
     author: 'Enerji & Teknoloji Servisi'
   }
 ];

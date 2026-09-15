@@ -29,7 +29,7 @@ export const categoriesData: Category[] = [
     id: 'cat-electric',
     title: 'Elektrikli',
     slug: 'Elektrikli',
-    image: 'https://images.unsplash.com/photo-1558441719-aa3445544f50?auto=format&fit=crop&w=800&q=80',
+    image: '/images/ev-charging.jpg',
     description: 'Sıfır emisyon, anlık tork patlaması ve yeni nesil otonom sürüş teknolojileri.',
     iconName: 'BatteryCharging'
   },
